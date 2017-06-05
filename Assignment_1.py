@@ -37,7 +37,7 @@ def by_state(state):
         current_weapons = Counter(state_df["Weapon"])
         
         for x in sorted(current_weapons , key = current_weapons.get , reverse= True):
-            weapon_required = { x : (current_weapons[x]/total_weapons)}
+            weapon_required = { x : (current_weapons[x]/total_weapons)*100}
             return (weapon_required)
        
     except(ValueError,IndexError,ZeroDivisionError):
